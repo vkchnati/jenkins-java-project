@@ -1,3 +1,4 @@
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -10,7 +11,10 @@
 	
 	<properties>
 		<docker.image.prefix>kammana</docker.image.prefix>
-	</properties>	
+		<maven.compiler.source>7</maven.compiler.source> <!-- Java source version -->
+		<maven.compiler.target>7</maven.compiler.target> <!-- Java target version -->
+	</properties>
+	
 	<dependencies>
 		<dependency>
 		    <groupId>com.oracle.bedrock</groupId>
@@ -24,7 +28,6 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 	
 	<distributionManagement>
@@ -47,5 +50,17 @@
 	    </pluginRepository>
 	</pluginRepositories>
 
-	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version> <!-- Updated plugin version -->
+				<configuration>
+					<source>7</source> <!-- Java source version -->
+					<target>7</target> <!-- Java target version -->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
